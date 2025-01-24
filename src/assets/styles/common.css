@@ -1,0 +1,30 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body, #app {
+	overflow: hidden;
+	height: 100vh;
+	width: 100vw;
+}
+
+.flexRow {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.flexColumn {
+	display: flex;
+	flex-direction: column;
+}
+
+.flex1 {
+	flex: 1;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}

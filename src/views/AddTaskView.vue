@@ -1,13 +1,9 @@
 <template>
-  <div class="AddTaskView">
-    <!-- 可以使用 CellGroup 作为容器 -->
-      <van-field v-model="task.name" label="文本" placeholder="请输入用户名" />
+  <div class="upper flexRow">
+    添加任务
+    <span>X</span>
   </div>
-	<!-- 可以使用 CellGroup 作为容器 -->
-<van-cell-group inset>
-  <van-field v-model="task.name" label="文本" placeholder="请输入用户名" />
-</van-cell-group>
-
+  <div class="AddTaskView"></div>
 </template>
 
 <script setup>
@@ -25,5 +21,9 @@ const task = ref({
 
 <style scoped>
 .AddTaskView {
+}
+.upper {
+  width: 100%;
+  justify-content: space-between;
 }
 </style>

@@ -6,32 +6,20 @@
       <RouterLink class="tool" to="addTask">+</RouterLink>
     </div>
     <div class="todos flexColumn">
-      <Todo v-for="todo in todos" :data="todo"/>
+      <TodoItem v-for="todo in todos" :data="todo" />
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
-import Todo from '../components/Todo.vue';
+import TodoItem from '../components/TodoItem.vue';
 import { RouterLink } from 'vue-router';
+import { getAllTodos } from '@/utils/todos';
 
 const title = ref('Today');
 
-const todos = ref([
-  { id: 1, content: 'Todo 1', completed: false, type: 'A', pre: '12133' },
-  { id: 2, content: 'Todo 2', completed: true, type: 'A', pre: '12133' },
-  { id: 1, content: 'Todo 1', completed: true, type: 'A', pre: '12133' },
-  { id: 2, content: 'Todo 2', completed: false, type: 'A', pre: '12133' },
-  { id: 3, content: 'Todo 3', completed: false, type: 'A', pre: '12133' },
-  { id: 1, content: 'Todo 1', completed: true, type: 'A', pre: '12133' },
-  { id: 2, content: 'Todo 2', completed: true, type: 'A', pre: '12133' },
-  { id: 3, content: 'Todo 3', completed: false, type: 'A', pre: '12133' },
-  { id: 1, content: 'Todo 1', completed: false, type: 'A', pre: '12133' },
-  { id: 2, content: 'Todo 2', completed: true, type: 'A', pre: '12133' },
-  { id: 3, content: 'Todo 3', completed: false, type: 'A', pre: '12133' },
-  { id: 1, content: 'Todo 1', completed: false, type: 'A', pre: '12133' },
-]);
+const todos = getAllTodos();
 </script>
 
 <style scoped>
